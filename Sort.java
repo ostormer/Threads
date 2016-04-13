@@ -2,12 +2,13 @@ import java.io.*;
 import java.util.*;
 
 class Sort{
+  Monitor moni = null;
   public static void main(String[] args) throws FileNotFoundException{
-
+    moni = new Monitor();
     File innFil = new File(args[1]);
     Scanner sc = new Scanner(innFil);
     int antTraader = 0;
-    try{ //hdsgh
+    try{
       antTraader= Integer.parseInt(args[0]);
     }
     catch(NumberFormatException e){
@@ -53,11 +54,8 @@ class Sort{
       SortTrad trad = new SortTrad(temp);
       trad.start();                                                                  //sende arrayen til tråd
     }
-
-
-
-
-
-
+  }
+  public static Monitor hentMonitor(){
+    return moni;
   }
 }
