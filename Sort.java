@@ -6,14 +6,16 @@ class Sort{
 
     File innFil = new File(args[1]);
     Scanner sc = new Scanner(innFil);
+    int antTraader = 0;
     try{
-      int antTraader = Integer.parseInt(args[0]);
+      antTraader= Integer.parseInt(args[0]);
     }
     catch(NumberFormatException e){
       System.out.println("Det foerste argumentet er ikke et tall");
       System.exit(0);
     }
-    int antOrd = Integer.parseInt(sc.nextLine());
+    int antOrd = 0;
+    antOrd = Integer.parseInt(sc.nextLine());
 
     String[] ordliste = new String[antOrd];
     try{
@@ -28,16 +30,18 @@ class Sort{
       System.out.println("Det er for mange ord i filen");
     }
 
-    int ordMinste = antOrd/antTraader;
-    int ordStoerste = ordIMinste+1;
-    int antStoerste = antOrd % antTraader;
-    int antMinste = antTraader - antStoerste;
+    int ordMinste = (antOrd / antTraader);
+    int ordStoerste = (ordMinste + 1);
+    int antStoerste = (antOrd % antTraader);
+    int antMinste = (antTraader - antStoerste);
 
     for(int i = 0; i < antStoerste*ordStoerste; i+= ordStoerste){
       String[] temp = new String[ordStoerste];                         //lager array
       for(int u = 0; u < ordStoerste; u++){
         temp[u] = ordliste[u+i];                                        //putter ord i array
       }
+      SortTrad trad = new SortTrad(temp);
+      trad.start();
                                                                         //sende arrayen til tråd
     }
 
@@ -46,7 +50,8 @@ class Sort{
       for(int u = 0; u < ordMinste; u++){
         temp[u] = ordliste[u+i];                                        //putter ord i array
       }
-                                                                        //sende arrayen til tråd
+      SortTrad trad = new SortTrad(temp);
+      trad.start();                                                                  //sende arrayen til tråd
     }
 
 
