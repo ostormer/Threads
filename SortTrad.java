@@ -30,7 +30,7 @@ class SortTrad extends Thread{
     }
 
     public String[] flett(String[] arr1, String[] arr2){
-
+      return null;
     }
 
 }

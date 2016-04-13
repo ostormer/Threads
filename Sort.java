@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 class Sort{
-  Monitor moni = null;
+  static Monitor moni = null;
   public static void main(String[] args) throws FileNotFoundException{
     moni = new Monitor();
     File innFil = new File(args[1]);
@@ -55,7 +55,7 @@ class Sort{
       trad.start();                                                                  //sende arrayen til tråd
     }
   }
-  public static Monitor hentMonitor(){
+  public static Monitor getMonitor(){
     return moni;
   }
 }
