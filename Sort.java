@@ -27,5 +27,32 @@ class Sort{
     if(sc.hasNextLine()){
       System.out.println("Det er for mange ord i filen");
     }
+
+    int ordMinste = antOrd/antTraader;
+    int ordStoerste = ordIMinste+1;
+    int antStoerste = antOrd % antTraader;
+    int antMinste = antTraader - antStoerste;
+
+    for(int i = 0; i < antStoerste*ordStoerste; i+= ordStoerste){
+      String[] temp = new String[ordStoerste];                         //lager array
+      for(int u = 0; u < ordStoerste; u++){
+        temp[u] = ordliste[u+i];                                        //putter ord i array
+      }
+                                                                        //sende arrayen til tråd
+    }
+
+    for(int i = ordStoerste*antStoerste; i < antOrd; i+= ordMinste){
+      String[] temp = new String[ordMinste];                         //lager array
+      for(int u = 0; u < ordMinste; u++){
+        temp[u] = ordliste[u+i];                                        //putter ord i array
+      }
+                                                                        //sende arrayen til tråd
+    }
+
+
+
+
+
+
   }
 }
