@@ -7,7 +7,7 @@ class Sort{
     File innFil = new File(args[1]);
     Scanner sc = new Scanner(innFil);
     int antTraader = 0;
-    try{
+    try{ //hdsgh
       antTraader= Integer.parseInt(args[0]);
     }
     catch(NumberFormatException e){

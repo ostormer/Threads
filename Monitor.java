@@ -20,7 +20,7 @@ class Monitor {
       arr2 = arr;
     }
 
-  }
+  }//github
 
   synchronized ToArrayer hentTo(){
     /*while(arr1 == null || arr2 == null){
