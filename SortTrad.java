@@ -30,7 +30,29 @@ class SortTrad extends Thread{
     }
 
     public String[] flett(String[] arr1, String[] arr2){
-        return null;
+        String[] flettet = new String[arr1.length + arr2.length];
+        int a = 0;
+        int b = 0;
+        for(int i = 0; i < flettet.length; i++){
+            if(a >= arr1.length){
+                flettet[i] = arr2[b];
+                b++;
+            }
+            else if(b >= arr2.length){
+                flettet[i] = arr1[a];
+                a++;
+            }
+            else if(arr1[a].compareTo(arr2[b]) == 1){
+                flettet[i] = arr2[b];
+                b++;
+            }
+            else{
+                flettet[i] = arr1[a];
+                a++;
+            }
+        }
+
+        return flettet;
     }
 
 }
