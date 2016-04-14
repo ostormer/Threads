@@ -21,8 +21,9 @@ class SortTrad extends Thread{
         boolean harJobb = true;
 
         while(harJobb){
+            ToArrayer to = null;
             if(mon.erFull()){
-                ToArrayer to = mon.hentTo();
+                to = mon.hentTo();
                 continue;
             }
 
