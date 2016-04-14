@@ -20,9 +20,10 @@ class SortTrad extends Thread{
         for(String s : array){
             System.out.println(s);
         }
-        mon.putInn(array);
+        System.out.println(" ");
 
-        boolean harJobb = true;
+        boolean harJobb = mon.putInn(array);
+
 
         while(harJobb){
             ToArrayer to = null;
@@ -35,9 +36,14 @@ class SortTrad extends Thread{
 
             String[] sendDenne = flett(to.arr1, to.arr2);
 
+            for(String s : sendDenne){
+                System.out.println(s);
+            }
+            System.out.println(" ");
+
             harJobb = mon.putInn(sendDenne);
         }
-        System.out.println("en tråd er ferdig");
+        System.out.println("en traad er ferdig");
     }
 
     public String[] flett(String[] arr1, String[] arr2){

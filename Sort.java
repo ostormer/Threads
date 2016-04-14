@@ -77,5 +77,6 @@ class Sort{
             System.out.println();
             System.exit(0);
         }
+        System.out.println("ferdig da");
     }
 }
