@@ -21,7 +21,10 @@ class SortTrad extends Thread{
         boolean harJobb = true;
 
         while(harJobb){
-            ToArrayer to = mon.hentTo();
+            if(mon.erFull()){
+                ToArrayer to = mon.hentTo();
+            }
+
             String[] sendDenne = flett(to.arr1, to.arr2);
 
             harJobb = mon.putInn(sendDenne);
