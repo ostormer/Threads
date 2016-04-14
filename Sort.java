@@ -4,7 +4,7 @@ import java.util.*;
 class Sort{
     static Monitor moni = null;
     public static void main(String[] args) throws FileNotFoundException{
-        moni = new Monitor();
+
         File innFil = new File(args[1]);
         Scanner sc = new Scanner(innFil);
         int antTraader = 0;
@@ -17,7 +17,7 @@ class Sort{
         }
         int antOrd = 0;
         antOrd = Integer.parseInt(sc.nextLine());
-
+        moni = new Monitor(antOrd);
         String[] ordliste = new String[antOrd];
         try{
             for(int i = 0; i < antOrd; i++){
@@ -41,7 +41,7 @@ class Sort{
             for(int u = 0; u < ordStoerste; u++){
                 temp[u] = ordliste[u+i];                                        //putter ord i array
             }
-            SortTrad trad = new SortTrad(temp);
+            SortTrad trad = new SortTrad(temp, moni);
             trad.start();
             //sende arrayen til tråd
         }
@@ -51,7 +51,7 @@ class Sort{
             for(int u = 0; u < ordMinste; u++){
                 temp[u] = ordliste[u+i];                                        //putter ord i array
             }
-            SortTrad trad = new SortTrad(temp);
+            SortTrad trad = new SortTrad(temp, moni);
             trad.start();                                                                  //sende arrayen til tråd
         }
     }

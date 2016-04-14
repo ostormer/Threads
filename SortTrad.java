@@ -3,12 +3,12 @@ class SortTrad extends Thread{
     private String[] arr2;
     private Monitor mon;
 
-    SortTrad(String[] arr, monitor){
+    SortTrad(String[] arr, Monitor monitor){
         arr1 = arr;
         mon = monitor;
     }
 
-    public void run();
+    public void run(){
         for(int i = 0; i < arr1.length-1; i++){
             if(arr1[i].compareTo(arr1[i+1]) == 1){
                 String temp = arr1[i];
@@ -25,7 +25,7 @@ class SortTrad extends Thread{
             ToArrayer to = mon.hentTo();
             String[] sendDenne = flett(to.arr1, to.arr2);
 
-            mon.putInn(sendDenne);
+            harJobb = mon.putInn(sendDenne);
         }
     }
 

@@ -1,8 +1,13 @@
 class Monitor {
     private String[] arr1;
     private String[] arr2;
+    private int antOrd;
 
-    synchronized void putInn(String[] arr){
+    Monitor(int a){
+        antOrd = a;
+    }
+
+    synchronized boolean putInn(String[] arr){
         while(arr1 != null && arr2 != null){
             try{
                 wait();
@@ -13,9 +18,11 @@ class Monitor {
         }
         if(arr1 == null){
             arr1 = arr;
+            return true;
         }
         else{
             arr2 = arr;
+            return false;
         }
 
     }
