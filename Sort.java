@@ -3,6 +3,7 @@ import java.util.*;
 
 class Sort{
     static Monitor moni = null;
+    static int antOrd = 0;
     public static void main(String[] args) throws FileNotFoundException{
 
         File innFil = new File(args[1]);
@@ -15,7 +16,7 @@ class Sort{
             System.out.println("Det foerste argumentet er ikke et tall");
             System.exit(0);
         }
-        int antOrd = 0;
+
         antOrd = Integer.parseInt(sc.nextLine());
         moni = new Monitor(antOrd);
         String[] ordliste = new String[antOrd];
@@ -54,5 +55,12 @@ class Sort{
             SortTrad trad = new SortTrad(temp, moni);
             trad.start();                                                                  //sende arrayen til tråd
         }
+    }
+
+    public void gjoerResten(String[] arr){
+        if(arr.length != antOrd){
+            System.out.println("Den ferdig sorterte ordlisten har feil lengde");
+        }
+
     }
 }
