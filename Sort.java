@@ -59,9 +59,23 @@ class Sort{
 
     public static void gjoerResten(String[] arr){
         if(arr.length != antOrd){
-            System.out.println("Den ferdig sorterte ordlisten har feil lengde: " + arr.length);
+            System.out.println("Den ferdig sorterte ordlisten har feil lengde: " + arr.length + " != " + antOrd);
             System.exit(0);
         }
-
+        else if(arr[antOrd-1] == null){
+            System.out.println("Det siste objektet i listen er et null-objekt");
+            System.exit(0);
+        }
+        boolean erSortert = true;
+        for(int i = 0; i < antOrd-1; i++){
+            if(arr[i].compareTo(arr[i+1]) > 0){
+                erSortert = false;
+                break;
+            }
+        }
+        if(!erSortert){
+            System.out.println();
+            System.exit(0);
+        }
     }
 }

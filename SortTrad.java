@@ -9,7 +9,7 @@ class SortTrad extends Thread{
 
     public void run(){
         for(int i = 0; i < array.length-1; i++){
-            if(array[i].compareTo(array[i+1]) == 1){
+            if(array[i].compareTo(array[i+1]) > 0){
                 String temp = array[i];
                 array[i] = array[i+1];
                 array[i+1] = temp;
@@ -49,7 +49,7 @@ class SortTrad extends Thread{
                 flettet[i] = arr1[a];
                 a++;
             }
-            else if(arr1[a].compareTo(arr2[b]) == 1){
+            else if(arr1[a].compareTo(arr2[b]) > 0){
                 flettet[i] = arr2[b];
                 b++;
             }
