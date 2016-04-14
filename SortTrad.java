@@ -16,6 +16,10 @@ class SortTrad extends Thread{
                 i = -1;
             }
         }
+        //Debug!"#¤%&/()=?`=)(/&EWQETUIO)RE%&DV`"
+        for(String s : array){
+            System.out.println(s);
+        }
         mon.putInn(array);
 
         boolean harJobb = true;
