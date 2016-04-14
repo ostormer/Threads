@@ -1,23 +1,22 @@
 class SortTrad extends Thread{
-    private String[] arr1;
-    private String[] arr2;
+    private String[] array;
     private Monitor mon;
 
     SortTrad(String[] arr, Monitor monitor){
-        arr1 = arr;
+        array = arr;
         mon = monitor;
     }
 
     public void run(){
-        for(int i = 0; i < arr1.length-1; i++){
-            if(arr1[i].compareTo(arr1[i+1]) == 1){
-                String temp = arr1[i];
-                arr1[i] = arr1[i+1];
-                arr1[i+1] = temp;
+        for(int i = 0; i < array.length-1; i++){
+            if(array[i].compareTo(array[i+1]) == 1){
+                String temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
                 i = -1;
             }
         }
-        mon.putInn(arr1);
+        mon.putInn(array);
 
         boolean harJobb = true;
 
