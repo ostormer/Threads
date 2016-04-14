@@ -60,6 +60,7 @@ class Sort{
     public static void gjoerResten(String[] arr){
         if(arr.length != antOrd){
             System.out.println("Den ferdig sorterte ordlisten har feil lengde");
+            System.exit(0);
         }
 
     }
