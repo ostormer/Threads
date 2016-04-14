@@ -55,7 +55,4 @@ class Sort{
             trad.start();                                                                  //sende arrayen til tråd
         }
     }
-    public static Monitor getMonitor(){
-        return moni;
-    }
 }
