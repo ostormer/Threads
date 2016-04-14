@@ -1,4 +1,6 @@
 class Monitor {
+
+    
     private String[] arr1;
     private String[] arr2;
     private int antOrd;
