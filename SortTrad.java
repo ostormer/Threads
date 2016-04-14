@@ -1,14 +1,14 @@
 class SortTrad extends Thread{
     private String[] arr1;
     private String[] arr2;
+    private Monitor mon;
 
-    SortTrad(String[] arr){
+    SortTrad(String[] arr, monitor){
         arr1 = arr;
+        mon = monitor;
     }
 
-    public void run(){
-        String[] sortert = new String[arr1.length];
-        String min = arr1[0];
+    public void run();
         for(int i = 0; i < arr1.length-1; i++){
             if(arr1[i].compareTo(arr1[i+1]) == 1){
                 String temp = arr1[i];
@@ -17,15 +17,15 @@ class SortTrad extends Thread{
                 i = -1;
             }
         }
-        Sort.getMonitor().putInn(arr1);
+        mon.putInn(arr1);
 
         boolean harJobb = true;
 
         while(harJobb){
-            ToArrayer to = Sort.getMonitor().hentTo();
+            ToArrayer to = mon.hentTo();
             String[] sendDenne = flett(to.arr1, to.arr2);
 
-            Sort.getMonitor().putInn(sendDenne);
+            mon.putInn(sendDenne);
         }
     }
 
