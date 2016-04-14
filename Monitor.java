@@ -21,12 +21,12 @@ class Monitor {
     }
 
     synchronized ToArrayer hentTo(){
-    String[] temp1 = arr1;
-    String[] temp2 = arr2;
-    arr1 = null;
-    arr2 = null;
-    notify();
-    return new ToArrayer(temp1, temp2);
+        String[] temp1 = arr1;
+        String[] temp2 = arr2;
+        arr1 = null;
+        arr2 = null;
+        notify();
+        return new ToArrayer(temp1, temp2);
     }
 
     public boolean erFull(){
