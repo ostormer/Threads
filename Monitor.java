@@ -8,7 +8,7 @@ class Monitor {
     }
 
     synchronized boolean putInn(String[] arr){
-        while(arr1 != null || arr2 != null){
+        while(arr1 != null && arr2 != null){
             try{
                 wait();
             }
