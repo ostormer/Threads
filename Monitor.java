@@ -18,8 +18,8 @@ class Monitor {
         }
         if(arr1 == null){
             arr1 = arr;
-            if(arr1.length() = antOrd){
-                gjoerResten(arr1);
+            if(arr1.length == antOrd){
+                Sort.gjoerResten(arr1);
                 return false;
             }
             return true;
