@@ -27,6 +27,7 @@ class SortTrad extends Thread{
 
             harJobb = mon.putInn(sendDenne);
         }
+        System.out.println("en tråd er ferdig");
     }
 
     public String[] flett(String[] arr1, String[] arr2){
