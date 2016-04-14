@@ -23,6 +23,7 @@ class SortTrad extends Thread{
         while(harJobb){
             if(mon.erFull()){
                 ToArrayer to = mon.hentTo();
+                continue;
             }
 
             String[] sendDenne = flett(to.arr1, to.arr2);
