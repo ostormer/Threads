@@ -24,6 +24,8 @@ class SortTrad extends Thread{
             ToArrayer to = null;
             if(mon.erFull()){
                 to = mon.hentTo();
+            }
+            else{
                 continue;
             }
 
