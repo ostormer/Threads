@@ -74,7 +74,7 @@ class Sort{
             }
         }
         if(!erSortert){
-            System.out.println();
+            System.out.println("Listen ble ikke sortert som den skulle");
             System.exit(0);
         }
         System.out.println("ferdig da");
