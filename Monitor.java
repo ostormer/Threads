@@ -1,6 +1,6 @@
 class Monitor {
 
-    
+
     private String[] arr1;
     private String[] arr2;
     private int antOrd;
@@ -20,15 +20,14 @@ class Monitor {
         }
         if(arr1 == null){
             arr1 = arr;
-            if(arr1.length == antOrd){
+            if(arr1.length == antOrd){      //er ferdig
                 Sort.gjoerResten(arr1);
-                return false;
             }
-            return true;
+            return false;                   //Dreper den foerste
         }
         else{
             arr2 = arr;
-            return false;
+            return true;                    //Andre fortsetter
         }
 
     }
@@ -38,7 +37,7 @@ class Monitor {
         String[] temp2 = arr2;
         arr1 = null;
         arr2 = null;
-        notify();
+        notifyAll();
         return new ToArrayer(temp1, temp2);
     }
 
