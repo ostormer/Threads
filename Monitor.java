@@ -1,6 +1,5 @@
 class Monitor {
 
-
     private String[] arr1;
     private String[] arr2;
     private int antOrd;
@@ -37,7 +36,7 @@ class Monitor {
         String[] temp2 = arr2;
         arr1 = null;
         arr2 = null;
-        notifyAll();
+        notify();
         return new ToArrayer(temp1, temp2);
     }
 

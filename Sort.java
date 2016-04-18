@@ -4,18 +4,25 @@ import java.util.*;
 class Sort{
     static Monitor moni = null;
     static int antOrd = 0;
+    static String utFilNavn;
     public static void main(String[] args) throws FileNotFoundException{
 
-        File innFil = new File(args[1]);
-        Scanner sc = new Scanner(innFil);
         int antTraader = 0;
+        File innFil = null;
         try{
-            antTraader= Integer.parseInt(args[0]);
+            antTraader = Integer.parseInt(args[0]);
+            innFil = new File(args[1]);
+            utFilNavn = args[2];
         }
         catch(NumberFormatException e){
             System.out.println("Det foerste argumentet er ikke et tall");
             System.exit(0);
         }
+        catch(IndexOutOfBoundsException e){
+            System.out.println("Ikke nok argumenter");
+            System.exit(0);
+        }
+        Scanner sc = new Scanner(innFil);
 
         antOrd = Integer.parseInt(sc.nextLine());
         moni = new Monitor(antOrd);
@@ -67,7 +74,7 @@ class Sort{
             System.exit(0);
         }
         boolean erSortert = true;
-        for(int i = 0; i < antOrd-1; i++){
+        for(int i = 0; i < antOrd - 1; i++){
             if(arr[i].compareTo(arr[i+1]) > 0){
                 erSortert = false;
                 break;
@@ -77,6 +84,21 @@ class Sort{
             System.out.println("Listen ble ikke sortert som den skulle");
             System.exit(0);
         }
+
+        PrintWriter skriver = null;
+        try{
+            skriver = new PrintWriter(utFilNavn);
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();            //Dette burde uansett ikke kunne skje
+            System.exit(0);
+        }
+        skriver.println(antOrd);
+        for(String s : arr){
+            skriver.println(s);
+        }
+        skriver.close();
+
         System.out.println("ferdig da");
     }
 }
