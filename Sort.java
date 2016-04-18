@@ -99,6 +99,6 @@ class Sort{
         }
         skriver.close();
 
-        System.out.println("ferdig da");
+        System.out.println("Sortert ferdig uten feil");
     }
 }

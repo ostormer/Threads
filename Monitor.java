@@ -22,11 +22,11 @@ class Monitor {
             if(arr1.length == antOrd){      //er ferdig
                 Sort.gjoerResten(arr1);
             }
-            return false;                   //Dreper den foerste
+            return false;                   //Dreper den foerste traden
         }
         else{
-            arr2 = arr;
-            return true;                    //Andre fortsetter
+            arr2 = arr;                     //Andre fortsetter, henter to
+            return true;                    // arrayer med en gang.
         }
 
     }
